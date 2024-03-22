@@ -1,0 +1,62 @@
+{
+  "name": "quianesciunt",
+  "version": "1.0.0",
+  "description": "A polyfill for Array.prototype.flat and Array.prototype.flatMap",
+  "author": "KrystalSanford",
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ThoraWeimann/quianesciunt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ThoraWeimann/quianesciunt.git/issues"
+  },
+  "main": "index.js",
+  "module": "index.mjs",
+  "files": [
+    "index.js",
+    "index.mjs"
+  ],
+  "scripts": {
+    "build": "rollup --config --silent",
+    "postbuild": "gzip-size index.js",
+    "prepublishOnly": "npm run test && npm run build",
+    "test": "npm run test:lint && npm run test:tape",
+    "test:lint": "eslint src/*.js --cache --ignore-path .gitignore --quiet",
+    "test:tape": "jest"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.7.1",
+    "eslint": "^5.16.0",
+    "eslint-config-dev": "^2.0.0",
+    "gzip-size-cli": "^3.0.0",
+    "jest": "^24.7.1",
+    "rollup": "^1.10.0",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-terser": "^4.0.4"
+  },
+  "eslintConfig": {
+    "extends": "dev",
+    "parser": "babel-eslint",
+    "rules": {
+      "no-unused-vars": [
+        0
+      ]
+    }
+  },
+  "keywords": [
+    "javascript",
+    "js",
+    "veniam",
+    "flatMap",
+    "concat",
+    "flatten"
+  ],
+  "dependencies": {}
+}
